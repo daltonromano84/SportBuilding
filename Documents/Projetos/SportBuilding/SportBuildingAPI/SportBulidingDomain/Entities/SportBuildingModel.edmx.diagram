@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="465f6f866b8c4c2eaa0456b77ab05c4d" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="SportBuildingModel.Especialidades" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportBuildingModel.ProfissionalEspecialidades" Width="1.5" PointX="4" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="SportBuildingModel.FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SportBuildingModel.Bairro" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.Profissionais" Width="1.5" PointX="0.75" PointY="5" />
+        <AssociationConnector Association="SportBuildingModel.FK_ProfissionalEspecialidades_Profissionais_ProfissionalID" />
+        <EntityTypeShape EntityType="SportBuildingModel.Cidade" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.Pais" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.UF" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.NotasProfissionais" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.VW_NotasProfissionais" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.Condominios" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.PedidoAula" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.VW_ListaProfissionais" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="SportBuildingModel.VW_ProfissionaisDadosCruzados" Width="1.5" PointX="9.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

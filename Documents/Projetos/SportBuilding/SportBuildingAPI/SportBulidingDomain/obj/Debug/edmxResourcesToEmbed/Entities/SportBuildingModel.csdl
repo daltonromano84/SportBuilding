@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportBuildingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Especialidades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ProfissionalEspecialidades" Relationship="Self.FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID" FromRole="Especialidades" ToRole="ProfissionalEspecialidades" />
+  </EntityType>
+  <EntityType Name="ProfissionalEspecialidades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDProfissional" Type="Int32" Nullable="false" />
+    <Property Name="IDEspecialidade" Type="Int32" Nullable="false" />
+    <Property Name="ProfissionalID" Type="Int32" />
+    <Property Name="EspecialidadeID" Type="Int32" />
+    <NavigationProperty Name="Especialidades" Relationship="Self.FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID" FromRole="ProfissionalEspecialidades" ToRole="Especialidades" />
+    <NavigationProperty Name="Profissionais" Relationship="SportBuildingModel.FK_ProfissionalEspecialidades_Profissionais_ProfissionalID" FromRole="ProfissionalEspecialidades" ToRole="Profissionais" />
+  </EntityType>
+  <Association Name="FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID">
+    <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="0..1" />
+    <End Role="ProfissionalEspecialidades" Type="Self.ProfissionalEspecialidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidades">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfissionalEspecialidades">
+        <PropertyRef Name="EspecialidadeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SportBuildingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Especialidades" EntityType="Self.Especialidades" />
+    <EntitySet Name="ProfissionalEspecialidades" EntityType="Self.ProfissionalEspecialidades" />
+    <AssociationSet Name="FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID" Association="Self.FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID">
+      <End Role="Especialidades" EntitySet="Especialidades" />
+      <End Role="ProfissionalEspecialidades" EntitySet="ProfissionalEspecialidades" />
+    </AssociationSet>
+    <EntitySet Name="Bairro" EntityType="SportBuildingModel.Bairro" />
+    <EntitySet Name="Profissionais" EntityType="SportBuildingModel.Profissionais" />
+    <AssociationSet Name="FK_ProfissionalEspecialidades_Profissionais_ProfissionalID" Association="SportBuildingModel.FK_ProfissionalEspecialidades_Profissionais_ProfissionalID">
+      <End Role="Profissionais" EntitySet="Profissionais" />
+      <End Role="ProfissionalEspecialidades" EntitySet="ProfissionalEspecialidades" />
+    </AssociationSet>
+    <EntitySet Name="Cidade" EntityType="SportBuildingModel.Cidade" />
+    <EntitySet Name="Pais" EntityType="SportBuildingModel.Pais" />
+    <EntitySet Name="UF" EntityType="SportBuildingModel.UF" />
+    <EntitySet Name="NotasProfissionais" EntityType="SportBuildingModel.NotasProfissionais" />
+    <EntitySet Name="VW_NotasProfissionais" EntityType="SportBuildingModel.VW_NotasProfissionais" />
+    <EntitySet Name="Condominios" EntityType="SportBuildingModel.Condominios" />
+    <EntitySet Name="PedidoAula" EntityType="SportBuildingModel.PedidoAula" />
+    <EntitySet Name="VW_ListaProfissionais" EntityType="SportBuildingModel.VW_ListaProfissionais" />
+    <EntitySet Name="VW_ProfissionaisDadosCruzados" EntityType="SportBuildingModel.VW_ProfissionaisDadosCruzados" />
+  </EntityContainer>
+  <EntityType Name="Bairro">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Profissionais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Idade" Type="Int32" Nullable="false" />
+    <Property Name="Endereco" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroRegistro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDPais" Type="Int32" Nullable="false" />
+    <Property Name="IDCidade" Type="Int32" Nullable="false" />
+    <Property Name="IDBairro" Type="Int32" Nullable="false" />
+    <Property Name="IDUF" Type="Int32" Nullable="false" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProfissionalEspecialidades" Relationship="SportBuildingModel.FK_ProfissionalEspecialidades_Profissionais_ProfissionalID" FromRole="Profissionais" ToRole="ProfissionalEspecialidades" />
+  </EntityType>
+  <Association Name="FK_ProfissionalEspecialidades_Profissionais_ProfissionalID">
+    <End Type="SportBuildingModel.Profissionais" Role="Profissionais" Multiplicity="0..1" />
+    <End Type="SportBuildingModel.ProfissionalEspecialidades" Role="ProfissionalEspecialidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profissionais">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfissionalEspecialidades">
+        <PropertyRef Name="ProfissionalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UF">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NotasProfissionais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDProfissional" Type="Int32" />
+    <Property Name="IDCondominio" Type="Int32" />
+    <Property Name="Nota" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VW_NotasProfissionais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MediaNota" Type="Decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <EntityType Name="Condominios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CNPJ" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NomeCondominio" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IDPais" Type="Int32" />
+    <Property Name="IDCidade" Type="Int32" />
+    <Property Name="IDUF" Type="Int32" />
+    <Property Name="IDBairro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Endereco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NomeResponsavel" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PedidoAula">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDProfissional" Type="Int32" />
+    <Property Name="IDCondominio" Type="Int32" />
+    <Property Name="Data" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VW_ListaProfissionais">
+    <Key>
+      <PropertyRef Name="IDProfissional" />
+      <PropertyRef Name="NomeProfissional" />
+      <PropertyRef Name="Idade" />
+      <PropertyRef Name="Sexo" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IDBairro" />
+      <PropertyRef Name="IDEspecialidade" />
+      <PropertyRef Name="Especialidades" />
+    </Key>
+    <Property Name="IDProfissional" Type="Int32" Nullable="false" />
+    <Property Name="NomeProfissional" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Idade" Type="Int32" Nullable="false" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDBairro" Type="Int32" Nullable="false" />
+    <Property Name="Bairro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IDEspecialidade" Type="Int32" Nullable="false" />
+    <Property Name="Especialidades" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MediaNotas" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="QtdAulas" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VW_ProfissionaisDadosCruzados">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Nome" />
+      <PropertyRef Name="Idade" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Sexo" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="IDCondominio" />
+      <PropertyRef Name="NomeCondominio" />
+      <PropertyRef Name="CNPJ" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Idade" Type="Int32" Nullable="false" />
+    <Property Name="Bairro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Endereco" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroRegistro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Especialidades" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Roles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IDCondominio" Type="Int32" Nullable="false" />
+    <Property Name="NomeCondominio" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NomeResponsavel" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CNPJ" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

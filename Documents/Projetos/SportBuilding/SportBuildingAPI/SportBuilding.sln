@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportBulidingDomain", "SportBulidingDomain\SportBulidingDomain.csproj", "{76D4BBDD-D247-466D-947C-8AE765CB7FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportBuildingAPI", "SportBuildingAPI\SportBuildingAPI.csproj", "{2030E878-AE57-4B0F-ACFB-143A3B78C49B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76D4BBDD-D247-466D-947C-8AE765CB7FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D4BBDD-D247-466D-947C-8AE765CB7FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D4BBDD-D247-466D-947C-8AE765CB7FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D4BBDD-D247-466D-947C-8AE765CB7FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2030E878-AE57-4B0F-ACFB-143A3B78C49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2030E878-AE57-4B0F-ACFB-143A3B78C49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2030E878-AE57-4B0F-ACFB-143A3B78C49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2030E878-AE57-4B0F-ACFB-143A3B78C49B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D6F9C43-E159-48D9-BCE8-88B2473E9661}
+	EndGlobalSection
+EndGlobal

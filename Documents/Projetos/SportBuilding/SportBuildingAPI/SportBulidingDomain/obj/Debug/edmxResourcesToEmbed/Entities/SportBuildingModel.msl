@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SportBuildingModelStoreContainer" CdmEntityContainer="SportBuildingEntities">
+    <EntitySetMapping Name="Especialidades">
+      <EntityTypeMapping TypeName="SportBuildingModel.Especialidades">
+        <MappingFragment StoreEntitySet="Especialidades">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfissionalEspecialidades">
+      <EntityTypeMapping TypeName="SportBuildingModel.ProfissionalEspecialidades">
+        <MappingFragment StoreEntitySet="ProfissionalEspecialidades">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDProfissional" ColumnName="IDProfissional" />
+          <ScalarProperty Name="IDEspecialidade" ColumnName="IDEspecialidade" />
+          <ScalarProperty Name="ProfissionalID" ColumnName="ProfissionalID" />
+          <ScalarProperty Name="EspecialidadeID" ColumnName="EspecialidadeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bairro">
+      <EntityTypeMapping TypeName="SportBuildingModel.Bairro">
+        <MappingFragment StoreEntitySet="Bairro">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profissionais">
+      <EntityTypeMapping TypeName="SportBuildingModel.Profissionais">
+        <MappingFragment StoreEntitySet="Profissionais">
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="IDUF" ColumnName="IDUF" />
+          <ScalarProperty Name="IDBairro" ColumnName="IDBairro" />
+          <ScalarProperty Name="IDCidade" ColumnName="IDCidade" />
+          <ScalarProperty Name="IDPais" ColumnName="IDPais" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NumeroRegistro" ColumnName="NumeroRegistro" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="SportBuildingModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais">
+      <EntityTypeMapping TypeName="SportBuildingModel.Pais">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UF">
+      <EntityTypeMapping TypeName="SportBuildingModel.UF">
+        <MappingFragment StoreEntitySet="UF">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotasProfissionais">
+      <EntityTypeMapping TypeName="SportBuildingModel.NotasProfissionais">
+        <MappingFragment StoreEntitySet="NotasProfissionais">
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+          <ScalarProperty Name="IDCondominio" ColumnName="IDCondominio" />
+          <ScalarProperty Name="IDProfissional" ColumnName="IDProfissional" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_NotasProfissionais">
+      <EntityTypeMapping TypeName="SportBuildingModel.VW_NotasProfissionais">
+        <MappingFragment StoreEntitySet="VW_NotasProfissionais">
+          <ScalarProperty Name="MediaNota" ColumnName="MediaNota" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Condominios">
+      <EntityTypeMapping TypeName="SportBuildingModel.Condominios">
+        <MappingFragment StoreEntitySet="Condominios">
+          <ScalarProperty Name="NomeResponsavel" ColumnName="NomeResponsavel" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="IDBairro" ColumnName="IDBairro" />
+          <ScalarProperty Name="IDUF" ColumnName="IDUF" />
+          <ScalarProperty Name="IDCidade" ColumnName="IDCidade" />
+          <ScalarProperty Name="IDPais" ColumnName="IDPais" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NomeCondominio" ColumnName="NomeCondominio" />
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoAula">
+      <EntityTypeMapping TypeName="SportBuildingModel.PedidoAula">
+        <MappingFragment StoreEntitySet="PedidoAula">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IDCondominio" ColumnName="IDCondominio" />
+          <ScalarProperty Name="IDProfissional" ColumnName="IDProfissional" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_ListaProfissionais">
+      <EntityTypeMapping TypeName="SportBuildingModel.VW_ListaProfissionais">
+        <MappingFragment StoreEntitySet="VW_ListaProfissionais">
+          <ScalarProperty Name="QtdAulas" ColumnName="QtdAulas" />
+          <ScalarProperty Name="MediaNotas" ColumnName="MediaNotas" />
+          <ScalarProperty Name="Especialidades" ColumnName="Especialidades" />
+          <ScalarProperty Name="IDEspecialidade" ColumnName="IDEspecialidade" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="IDBairro" ColumnName="IDBairro" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="NomeProfissional" ColumnName="NomeProfissional" />
+          <ScalarProperty Name="IDProfissional" ColumnName="IDProfissional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_ProfissionaisDadosCruzados">
+      <EntityTypeMapping TypeName="SportBuildingModel.VW_ProfissionaisDadosCruzados">
+        <MappingFragment StoreEntitySet="VW_ProfissionaisDadosCruzados">
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="NomeResponsavel" ColumnName="NomeResponsavel" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="NomeCondominio" ColumnName="NomeCondominio" />
+          <ScalarProperty Name="IDCondominio" ColumnName="IDCondominio" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Especialidades" ColumnName="Especialidades" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NumeroRegistro" ColumnName="NumeroRegistro" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
