@@ -1,0 +1,171 @@
+<div id="content">
+
+
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Other Pages', 'Profile']" icon="group" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+  
+  </div>
+  <!-- end row -->
+  <!-- row -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="well well-light well-sm no-margin no-padding">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div id="myCarousel" class="carousel fade profile-carousel">
+               
+                    <div class="air air-top-left padding-10">
+                      <h4 class="txt-color-white font-md"></h4>
+                    </div>
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <!-- Slide 1 -->
+                      <div class="item active">
+                        <img src="assets/img/sports/condominio.jpg" alt="demo user">
+                      </div>
+                  
+                    </div>
+                  </div>
+                </div>
+                <div *ngFor="let registro of registros" class="col-sm-12">
+                  <div class="row">
+                    <div class="col-sm-3 profile-pic">
+               
+                      <div class="padding-10">
+                        <h4 class="font-md"><strong>152</strong>
+                          <br>
+                          <small>Apartamentos</small>
+                        </h4>
+                        <br>
+                        <h4 class="font-md"><strong>16</strong>
+                          <br>
+                          <small>Pedidos</small>
+                        </h4>
+                        <br>
+                      
+                      
+                     
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <h1><span class="semi-bold">{{registro.NomeCondominio}}</span>
+                        <br>
+                        <small> {{registro.Endereco}}</small>
+                      </h1>
+                      <ul class="list-unstyled">
+                        <li>
+                          <p class="text-muted">
+                            <i class="fa fa-id-card-o">&#xA0;&#xA0;</i><span class="txt-color-darken">CNPJ: {{registro.CNPJ}}</span> 
+                          </p>
+                        </li>
+                        <li>
+                          <p class="text-muted">
+                            <i class="fa fa-user-o"></i>&#xA0;&#xA0;<a href="mailto:simmons@smartadmin">{{registro.NomeResponsavel}}</a>
+                          </p>
+                        </li>
+                          <li>
+                          <p class="text-muted">
+                            <i class="fa fa-calendar"></i>&#xA0;&#xA0;<span class="txt-color-darken">Horario Func. <a href="" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">8:00 às 22:00</a></span>
+                          </p>
+                        </li>
+                    
+                    
+                      </ul>
+                  
+                      <p>
+                        
+                      </p>
+                     
+                      <button 
+                      style="align-content: center;margin-left:10px" class="btn btn-info btn-sm" 
+                       type="button" data-toggle="modal" data-target="#mdModalComentarios" (click)="onAbrirComentario(registro)">                 
+                       <i class="fa fa-futbol-o"></i>
+                       
+                       Procurar Profissionais
+                     </button>
+                      <br>
+                      <br>
+                    </div>
+                    
+                  </div>
+                 
+             
+              </div>
+             
+              <!-- end row -->
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</div>
+<div class="row">
+  <div  id="mdModalComentarios" class="modal fade" data-keyboard="false" data-backdrop="static"  role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content ">    
+        <div class="modal-header modal-lg">
+          <button type="button" class="close" id="closeModal" data-dismiss="modal"   aria-hidden="true">
+            &times;
+          </button> 
+          <h4 class="modal-title" id="mySmallModalLabel">
+            Buscar Profissionais
+          </h4> 
+                  
+        </div>
+        
+          <div class="well no-padding">
+  
+            <form id="smart-form-register" class="smart-form client-form" [formGroup]="form" 
+            (ngSubmit)="onSubmit()">
+                      
+              <fieldset>
+                         
+                <section >
+                  <label class="select">
+                    <select class="selectpicker" ng-model="model"  name="bairro" placeholder="Bairro" formControlName="bairro" >
+                      <option  value="" selected >Selecione um Bairro</option>
+                      <option *ngFor="let bairro of bairros" value={{bairro.ID}}>{{bairro.Descricao}}</option>
+                      </select> <i></i> </label>
+                </section>
+                <section>
+                  <label class="select">
+                    <select class="selectpicker" ng-model="model"  name="bairro" placeholder="Esporte" formControlName="especialidade" >
+                      <option  value="" selected >Selecione um Esporte</option>
+                      <option *ngFor="let especialidade of especialidades" value={{especialidade.ID}}>{{especialidade.Descricao}}</option>
+                      </select> <i></i> </label>
+                </section>
+            
+                           
+              </fieldset>
+          
+  
+              <footer>
+                <button type="submit"   class="btn btn-primary">
+                  <i class="fa fa-search"></i>
+                  Buscar             
+                </button>
+              </footer>
+  
+              <div class="message">
+            
+              </div>
+            </form>
+  
+          </div>
+        
+      
+     
+      </div>
+    </div>
+  </div>  
+</div>

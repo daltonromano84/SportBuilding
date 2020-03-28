@@ -1,0 +1,470 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+ body:not(.menu-on-top).desktop-detected {
+    min-height: 500px!important;
+ }
+
+ #header{
+    height: 50px;    
+ } 
+
+ #logo {
+    margin-top: 5px;
+    padding-left: -3px;
+}
+
+#logo img {
+    width: 200px;    
+}
+#extr-page #header #logo img {
+    width: 200px;
+}
+
+.logoCurto-login {
+    margin-top: -410px;
+}
+.logoFooter {
+    vertical-align: center;
+    text-align: left;
+}
+.logo-login {
+    margin-top: -290px;
+}
+.page-footer{
+    height: 125px;
+    padding: 15px 13px 0;
+    padding-left: 233px;
+    border-top: 1px solid #CECECE;
+    background: #2a2725;
+    width: 100%;
+    position: absolute;
+    display: block;
+    bottom: 0;
+}
+.page-footer-master{
+    height: 125px;
+    padding: 15px 13px 0;
+    border-top: 1px solid #CECECE;
+    background: #2a2725;
+    width: 100%;
+    position: absolute;
+    display: block;
+    bottom: 0;
+}
+
+.imgLoading {
+    position:absolute;
+    left:50%;
+    top:50%;
+    /* margin-left:-10px;
+    margin-top:-40px; */
+    }
+
+.jarviswidget>header {
+    height: 44px;
+    padding: 0;
+    line-height: 40px;
+}
+
+[hidden] {
+    display: none !important;
+  }
+
+.body:not(.menu-on-top).desktop-detected {
+    min-height: 730px!important;
+}
+
+.login-info-header {
+    height: 38px;
+    display: block;   
+    color: #333;
+    font-weight: bold;
+    padding-top: 20px;    
+    border-bottom: none;
+}
+
+.label{
+    display: inline-block;
+    color: #bfbfbf;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #fff;
+    padding-left: 0;
+    text-align: left;    
+}
+
+.dialogTools{
+    width: 95%;   
+    text-align: left;
+    padding-left: 10px;
+}
+
+.dialogLogo{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.iManMenuTools{
+    width: 100px;   
+}
+
+.iManInfo{
+    display: inline-block;
+    color: black;
+    font-size: 11pt;
+    padding-left: 0;    
+}
+
+.iManNavigator{
+    margin-top: 20px;    
+    margin-bottom: 20px;    
+}
+
+.iManInfoAux{
+    display: inline-block;
+    color: #8d8989;
+    font-size: 8pt;
+    text-shadow: 0 0 1px #fff;
+    padding-left: 0;    
+}
+
+.labelAvisos {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.labelCompetencia{
+    display: inline-block;
+    color: #46797b;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #fff;
+    padding-left: 0;
+    text-align: left;    
+}
+
+.logo{
+    display: inline-block;
+    color: #A15B4C;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #fff;
+    padding-left: 0;
+    text-align: left;    
+}
+
+.labelUsuarioLogado{
+    display: inline-block;  
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+#activity {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default!important;
+    display: inline-block;
+    font-weight: 700;
+    height: 24px;
+    width: 24px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none!important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    background-color: #f8f8f8;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-image: -moz-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-image: -ms-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #bfbfbf;
+    color: #c4bab6;
+    font-size: 19px;
+    margin: 10px 0 0;
+    position: relative;
+}
+
+.modal-full {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-full-dialog {
+    position:absolute;
+    top:50% !important;
+    transform: translate(0, -50%) !important;
+    -ms-transform: translate(0, -50%) !important;
+    -webkit-transform: translate(0, -50%) !important;
+    margin:auto 5%;
+    width:90%;
+    height:90%;
+  }
+  
+  .modal-full-content {
+    min-height:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0; 
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 9px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    background-clip: padding-box;
+    outline: 0;
+  }
+  .modal-full-body {
+    position:absolute;
+    top:45px; /** height of header **/
+    bottom:45px;  /** height of footer **/
+    left:0;
+    right:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+  .modal-full-footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+
+  .modal-full {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-center-dialog {
+    position:absolute;
+    top:50% !important;
+    transform: translate(0, -50%) !important;
+    -ms-transform: translate(0, -50%) !important;
+    -webkit-transform: translate(0, -50%) !important;
+    margin:auto 10%;
+    width:75%;
+    height:80%;
+  }
+  
+  .modal-center-content {
+    padding: 15px;
+    min-height:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0; 
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 9px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    background-clip: padding-box;
+    outline: 0;
+  }
+  .modal-center-body {
+    position:absolute;
+    top:45px; /** height of header **/
+    bottom:45px;  /** height of footer **/
+    left:0;
+    right:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+  .modal-center-footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+  .modal-center {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  }
+  .disabled {
+    cursor: not-allowed;
+  }   
+
+  /* .smart-form :after,.smart-form :before{
+    margin:0;
+    padding:0;
+    box-sizing:content-box;
+    -moz-box-sizing:content-box
+    } */
+
+    .divDecimalNota{
+        display: inline-block;
+        color: #46797b;
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-shadow: 0 0 1px #fff;
+        padding-left: 10px;
+        text-align: left;
+        vertical-align: middle; 
+        padding: 5px;
+        padding-top: -5px;
+    }
+    .pantoneVerde{
+        color: #46797b
+    }
+    .pantoneHeaderGLPI{
+        color: #9A3756
+    }
+    .rating label{
+        color:#ccc;
+        transition:color .3s;
+        -o-transition:color .3s;
+        -ms-transition:color .3s;
+        -moz-transition:color .3s;
+        -webkit-transition:color .3s
+    }
+    .rating input+label:hover,.smart-form .rating input+label:hover~label{
+        color:#dda01b
+    }    
+    .smart-form .rating input:checked~label {
+        color:#e9d628 ;
+    }
+    
+    .estrelaSelecionada{
+        color: #e9d628
+    }
+
+    .divImgNota{
+        display: none
+    }
+    .printable{
+        display: none
+    }
+    
+    .bg-color-blueFlash{
+        background-color:#3276b1!important
+    }
+
+    .labelControleVisivel{
+
+        font-size:13px;
+    }
+    
+    
+.modal-title{
+    font-weight: 700;
+    color: #46797b;
+      
+}
+.pantoneGLVerde{
+    color: #46797b
+}
+.pantoneGLTerraCota{
+    color:#5A2D2C
+}
+
+a{
+    color: #46797b;
+    text-decoration: none;
+}
+
+.bg-color-pantoneGLVerde{background-color:#46797b!important}
+.bg-color-pantoneGLTerraCota{background-color:#5A2D2C!important}
+
+.bg-color-pantoneGL7540C{background-color:#4B5055!important}
+.bg-color-pantoneGL470C{background-color:#A75A29!important}
+.bg-color-pantoneGL7539C{background-color:#908F88!important}
+.bg-color-pantoneGL7532C{background-color:#65513C!important}
+.bg-color-pantoneGLWarmGray5C{background-color:#AEA299!important}
+.bg-color-pantoneGL4525C{background-color:#C8B783!important}
+.bg-color-pantoneGLWarmGray1C{background-color:#D8D1CA!important}
+
+
+  @media print {
+
+    .nonPrintable{
+        display:none;
+    }
+    .printable{
+        display:block;
+    }
+    
+    .divImgNota{
+        display: block
+    }
+    
+    .textPrintArea {
+        border: 1px solid #999;  
+        padding: 10px;  
+        min-width: 800px;    
+    }
+
+    .pageBreak { 
+        page-break-before: always;
+      }
+      h3, h4 {
+        page-break-after: avoid;
+      }
+      pre, blockquote {
+        page-break-inside: avoid;
+      }
+      .blockquote {
+        page-break-inside: avoid;
+      }
+
+  
+}

@@ -1,0 +1,10 @@
+{  
+  "/sportapi/*": {
+    "target": "https://localhost:44324/",
+    "secure": false,
+    "logLevel":"debug",
+    "pathRewrite": {
+    "^/sportapi": ""
+    }
+}  
+}

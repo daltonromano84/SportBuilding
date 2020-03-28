@@ -1,0 +1,123 @@
+<header id="header">
+  <div id="logo-group">
+
+    <!-- PLACE YOUR LOGO HERE -->
+    <span id="logo"> <img src="assets/img/sports/logo2.png" alt="SPORT BUILDING" style="width:200px;height: 45px;"> </span>
+    <!-- END LOGO PLACEHOLDER -->
+   
+  </div>
+  
+  <div class="hidden-xs dropdown" dropdown>
+
+    <div class="login-info-header">
+      <span class="online dropdown-toggle" dropdownToggle>
+        <span class="glyphicon glyphicon-user"></span>
+        {{ usuarioLogado.Nome }}      
+       <i ng-if="usuarioLogado.Nome" class="fa fa-angle-down"></i>   
+      </span>
+    </div>
+    <ul *dropdownMenu class="dropdown-menu">
+      <li>        
+        <a><b>Área:</b> {{ usuarioLogado.AreaDescricao }}</a>
+        <a><b>Equipe:</b> {{ usuarioLogado.EquipeDescricao }}</a>
+        <a><b>Gestor:</b> {{ usuarioLogado.LiderNome }}</a>        
+        <a class="divider"></a>
+        <a><b>Admissão:</b> {{ usuarioLogado.DataAdmissao }}</a>   
+        <a><b>Cargo:</b> {{ usuarioLogado.CargoDescricao }}</a>           
+      </li>      
+      <li>
+        <a (click)="onAlteraSenha()"><i class="fa fa-key"></i> Alterar Senha</a>
+      </li> 
+    </ul>
+    
+   </div>
+
+ <!-- <sa-recent-projects></sa-recent-projects> -->
+
+ <!-- Note: The activity badge color changes when clicked and resets the number to 0
+ Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+ <!-- <sa-activities></sa-activities> -->
+ 
+
+  <!-- pulled right: nav area -->
+  <div class="pull-right">
+
+    <sa-collapse-menu></sa-collapse-menu>
+
+    <!-- #MOBILE -->
+    <!-- Top menu profile link : this shows only when top menu is active -->
+    <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+      <li class="">
+        <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+          <img src="assets/img/avatars/sunny.png" alt="John Doe" class="online"/>
+        </a>
+        <ul class="dropdown-menu pull-right">
+          <li>
+            <a (click)="(null)" class="padding-10 padding-top-0 padding-bottom-0"><i
+              class="fa fa-cog"></i> Configurações</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a routerLink="/app-views/profile" class="padding-10 padding-top-0 padding-bottom-0"> <i
+              class="fa fa-user"></i>
+              <u>P</u>rofile</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a (click)="(null)" class="padding-10 padding-top-0 padding-bottom-0"
+               data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>A</u>talho</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a (click)="(null)" class="padding-10 padding-top-0 padding-bottom-0"
+               data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Tela <u>C</u>heia</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a routerLink="/auth/login" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i
+              class="fa fa-sign-out fa-lg"></i> <strong><u>S</u>air</strong></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- logout button -->
+    <sa-logout></sa-logout>
+    <!-- end logout button -->
+
+    <!-- search mobile button (this is hidden till mobile view port) -->
+    <!-- <div id="search-mobile" class="btn-header transparent pull-right">
+      <span> <a (click)="toggleSearchMobile()" title="Search"><i class="fa fa-search"></i></a> </span>
+    </div> -->
+    <!-- end search mobile button -->
+
+    <!-- input: search field -->
+    <!-- <form #searchForm="ngForm" (ngSubmit)="onSubmit()" class="header-search pull-right">
+      <input id="search-fld" type="text" name="param" required
+             placeholder="Find reports and more">
+      <button type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+      <a id="cancel-search-js" (click)="toggleSearchMobile()" title="Cancel Search"><i class="fa fa-times"></i></a>
+    </form> -->
+    <!-- end input: search field -->
+
+    <!-- fullscreen button -->
+    <sa-full-screen></sa-full-screen>
+    <!-- end fullscreen button -->
+
+    <!-- #Voice Command: Start Speech -->
+    <!-- <sa-speech-button></sa-speech-button> -->
+    <!-- end voice command -->
+
+
+    <!-- multiple lang dropdown : find all flags in the flags page -->
+    <!-- <sa-language-selector></sa-language-selector> -->
+    <!-- end multiple lang -->
+
+
+
+  </div>
+  <!-- end pulled right: nav area -->
+
+</header>

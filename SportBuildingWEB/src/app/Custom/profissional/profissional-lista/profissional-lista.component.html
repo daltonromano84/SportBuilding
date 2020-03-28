@@ -1,0 +1,81 @@
+<div id="content">
+  <div  class="row">
+   
+        <table id="tblProfissionais" class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th data-hide="mobile-p" > </th>
+              <th data-hide="mobile-p">Profissional</th>
+              <th data-hide="mobile-p">Idade</th>
+              <th data-hide="mobile-p">Sexo</th>
+              <th data-hide="mobile-p">Especialidade</th>
+              <th data-hide="mobile-p" >Bairro</th>
+              <th  style="text-align: center" data-hide="mobile-p" >Aulas</th>
+              <th  style="text-align: center" data-hide="mobile-p" >Avaliação</th>
+
+           
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let registro of registros">  
+              <td style="text-align: center" >
+                <button type="submit" class="btn btn-primary" (click)="onSelectItem(registro);" >
+                  <i class="fa fa-user"></i>
+                         Perfil  
+                </button>
+                                  
+             
+                </td> 
+                
+                <td>{{registro.NomeProfissional}}</td>
+                <td>{{registro.Idade}}</td>
+                <td>{{registro.Sexo}}</td>
+                <td >                    
+                  <b> {{registro.Especialidades}} </b> 
+                </td>
+                <td>                    
+                  <b> {{registro.Bairro}} </b> 
+                </td>
+                <td style="text-align: center">                    
+                  <b> {{registro.QtdAulas}} </b> 
+                </td>
+                <td  *ngIf="registro.MediaNotas >= 4.75" style="text-align: center">
+                  <img src="assets/img/sports/rating5.png" style="width: 100px;" alt="demo user">                    
+                </td>
+                <td  *ngIf="registro.MediaNotas < 4.75 && registro.MediaNotas >= 3.75" style="text-align: center">
+                  <img src="assets/img/sports/rating4.png" style="width: 100px;" alt="demo user">                    
+                </td>
+                <td  *ngIf="registro.MediaNotas < 3.75 && registro.MediaNotas >= 2.75" style="text-align: center">
+                  <img src="assets/img/sports/rating3.png" style="width: 100px;" alt="demo user">                    
+                </td>
+                <td  *ngIf="registro.MediaNotas < 2.75 && registro.MediaNotas >= 1.75" style="text-align: center">
+                  <img src="assets/img/sports/rating2.png" style="width: 100px;" alt="demo user">                    
+                </td>
+                <td  *ngIf="registro.MediaNotas < 1.75 && registro.MediaNotas >= 0.75" style="text-align: center">
+                  <img src="assets/img/sports/rating1.png" style="width: 100px;" alt="demo user">                    
+                </td>
+                <td  *ngIf="registro.MediaNotas < 0.75"  style="text-align: center">
+                  <img src="assets/img/sports/rating0.png" style="width: 100px;" alt="demo user">                    
+                </td>
+            </tr>
+          </tbody>
+        </table> 
+       
+  
+  </div>
+
+<!--        
+  <div class="row">
+    <div bsModal #mdModal="bs-modal" class="modal-full fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-full-dialog">
+        <div class="modal-full-content">
+
+          <div class="modal-full-body">    
+            <app-minhaAvaliacao-detalhe (atualizaLista)="listAvaliacaoColaboradorPorGestorUsuario()"></app-minhaAvaliacao-detalhe> 
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>     -->
+
+  

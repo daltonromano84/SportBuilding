@@ -1,0 +1,146 @@
+<div id="content">
+
+
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Other Pages', 'Profile']" icon="group" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+  
+  </div>
+  <!-- end row -->
+  <!-- row -->
+  <div  *ngFor="let registro of registros" class="row">
+    <div class="col-sm-12">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="well well-light well-sm no-margin no-padding">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div id="myCarousel" class="carousel fade profile-carousel">
+               
+                    <div class="air air-top-left padding-10">
+                      <h4 class="txt-color-white font-md"></h4>
+                    </div>
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <!-- Slide 1 -->
+                      <div class="item active">
+                        <img src="assets/img/sports/esportes.png" alt="demo user">
+                      </div>
+                                     </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="row">
+                    <div  class="col-sm-3 profile-pic">
+                      <img *ngIf="this.strSexo =='M'" src="assets/img/avatars/profile_man.jpg" alt="demo user">
+                      <img *ngIf="this.strSexo =='F'" src="assets/img/avatars/profile_Woman.jpg" alt="demo user">
+
+                      <div class="padding-10">
+                        <h4 class="font-md"><strong>9</strong>
+                          <br>
+                          <small>Aulas</small>
+                        </h4>
+                        <br>
+                        <h4 class="font-md"><strong>2</strong>
+                          <br>
+                          <small>Especialidades</small>
+                        </h4>
+                        <br>
+                        <div *ngIf="this.intNota >= 4.75" >
+                        <img src="assets/img/sports/rating5.png" style="width: 100px;" alt="demo user">
+                      </div>
+                      <div *ngIf="this.intNota < 4.75 && this.intNota >= 3.75">
+                        <img src="assets/img/sports/rating4.png" style="width: 100px;" alt="demo user">
+                      </div>
+                      <div *ngIf="this.intNota < 3.75 && this.intNota >= 2.75">
+                        <img src="assets/img/sports/rating3.png" style="width: 100px;" alt="demo user">
+                      </div>
+                      <div *ngIf="this.intNota < 2.75 && this.intNota >= 1.75">
+                        <img src="assets/img/sports/rating2.png" style="width: 100px;" alt="demo user">
+                      </div>
+                      <div *ngIf="this.intNota < 1.75 && this.intNota >= 0.75">
+                        <img src="assets/img/sports/rating1.png" style="width: 100px;" alt="demo user">
+                      </div>
+                      <div *ngIf="this.intNota < 0.75">
+                        <img src="assets/img/sports/rating0.png" style="width: 100px;" alt="demo user">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <h1><span class="semi-bold">{{registro.Nome}}</span>
+                        <br>
+                        <small> {{registro.Bairro}}</small>
+                      </h1>
+                      <ul class="list-unstyled">
+                        <li>
+                          <p class="text-muted">
+                            <i class="fa fa-id-card-o">&#xA0;&#xA0;</i><span class="txt-color-darken">{{registro.NumeroRegistro}}</span> 
+                          </p>
+                        </li>
+                        <li>
+                          <p class="text-muted">
+                            <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:simmons@smartadmin">{{registro.Email}}</a>
+                          </p>
+                        </li>
+                          <li>
+                          <p class="text-muted">
+                            <i class="fa fa-calendar"></i>&#xA0;&#xA0;<span class="txt-color-darken">Free after <a href="" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">4:30 PM</a></span>
+                          </p>
+                        </li>
+                        <li >
+                          <p class="font-md">
+                            <i>Especialidades</i>
+                          </p>
+                        </li>
+                        <li >
+                          <span *ngIf="registro.Especialidades.indexOf('Futebol')!= -1"><img src="assets/img/sports/002-football.png" alt="Futebol">Futebol</span>
+                          <span *ngIf="registro.Especialidades.indexOf('Boxe')!= -1"><img src="assets/img/sports/003-boxing-gloves.png" alt="Boxe">Boxe</span>
+                          <span *ngIf="registro.Especialidades.indexOf('Personal')!= -1"><img src="assets/img/sports/004-gym.png" alt="Personal">Personal</span>
+                          <span *ngIf="registro.Especialidades.indexOf('Natação')!= -1"><img src="assets/img/sports/001-swim.png" alt="Natação">Natação</span>
+                          
+                          
+                        </li>
+                      </ul>
+                  
+                    
+                        <br>            
+                   
+                     <p class="font-md">
+                        <i>Sobre</i>
+                      </p>
+
+                      <p>
+                        {{registro.Comentario}}
+                      </p>
+                      <br>
+                      <button *ngIf="isAgenda == false" type="submit" (click)="onAgendar(registro);"  class="btn btn-success">
+                        <i class="fa fa-calendar-check-o"></i>
+                        Agendar             
+                      </button>
+                      <button  *ngIf="isAgenda == true" type="submit" (click)="onVerAgenda(registro);"  class="btn btn-warning">
+                        <i class="fa fa-calendar-check-o"></i>
+                        Ver Agenda             
+                      </button>
+                      <br>
+                      <br>
+                    </div>
+                    
+                  </div>
+                 
+             
+              </div>
+             
+              <!-- end row -->
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+</div>

@@ -1,0 +1,180 @@
+<div >
+   <div class="well no-padding">
+  <form class="smart-form client-form" [formGroup]="form"  (ngSubmit)="onSubmit()">
+   
+
+    <header>
+     <h3>Agendar Aula</h3>
+    </header>
+             
+<fieldset *ngFor="let registro of registros" >
+  
+    <div  class="row" >                        
+        <div class="col col-1">
+         
+                              
+        </div>
+        <div class="col col-2">
+         
+        </div>
+        <div class="col col-4">
+          <h3>Condominio: {{strNomeCondominio}}</h3>
+           
+         </div> 
+  
+        
+        <div class="divAnonimo col col-4">
+     
+  
+      </div>
+        <div class="col col-5">
+                              
+          </div>
+      </div> 
+      <br/><br/>
+
+
+
+  <div class="row" >                        
+    <div class="col col-1">
+                          
+    </div>
+    <div class="col col-2">
+
+    </div>
+    <div  class="col col-5">
+      <h3>Professor(a): <b>{{registro.Nome}}</b> </h3>
+
+    </div>
+    <div class="col col-3">
+     
+
+  </div>
+    <div class="col col-5">
+                          
+      </div>
+  </div> 
+  <br>
+  <div class="row" >                        
+    <div class="col col-1">
+                          
+    </div>
+    <div class="col col-2">
+
+    </div>
+    <div  class="col col-5">
+      <h3>Especialidade(s): </h3>
+      <span *ngIf="registro.Especialidades.indexOf('Futebol')!= -1"><img src="assets/img/sports/002-football.png" alt="Futebol"> Futebol</span>
+      <span *ngIf="registro.Especialidades.indexOf('Boxe')!= -1"><img src="assets/img/sports/003-boxing-gloves.png" alt="Boxe"> Boxe</span>
+      <span *ngIf="registro.Especialidades.indexOf('Personal')!= -1"><img src="assets/img/sports/004-gym.png" alt="Personal"> Personal</span>
+      <span *ngIf="registro.Especialidades.indexOf('Natação')!= -1"><img src="assets/img/sports/001-swim.png" alt="Natação"> Natação</span>
+
+    </div>
+    <div class="col col-3">
+     
+
+  </div>
+    <div class="col col-5">
+                          
+      </div>
+  </div> 
+ 
+  <div class="row"> 
+                             
+      <div class="col col-3">
+                          
+      </div>
+      <div class="col col-4">
+        <!-- <div class="formGroup">
+            <label><b>A qual Área / Equipe se refere seu comentário ?</b></label>
+            <label class="select">
+              <select name="idEquipe" formControlName="idEquipe" ng-model="model" >
+                <option value="" selected>Selecione uma Área</option>
+                <option *ngFor="let equipe of equipes" value={{equipe.ID}}>{{equipe.Descricao}}</option>
+              </select> <i></i> 
+            </label>             
+        </div> -->
+        
+    </div> 
+    <div class="col col-5">
+                          
+    </div>
+  </div> 
+  <br/><br/>
+  <div class="row"> 
+                             
+    <div class="col col-3">
+                        
+    </div>
+    <div class="col col-4">
+      <div class="formGroup">
+        <label><b>Data do Agendamento</b></label>
+        <label class="textarea"> <i class="icon-prepend fa fa-comment nonPrintable"></i>
+      <my-date-picker name="data" [options]="myDatePickerOptions" formControlName="data"
+      [(ngModel)]="model" required></my-date-picker>
+    </label>     
+      
+  </div> 
+    </div>
+  <div class="col col-2">
+    <div class="formGroup">
+      <label><b>Horario</b></label>
+    <label class="input"> <i class="icon-prepend fa fa-clock-o"></i>
+          <input type="text" name="horario" placeholder="Insira o horario" formControlName="horario">
+        </label>        
+  </div>            
+  </div>
+  <div class="col col-3">
+   
+  </div>
+  
+</div> 
+<br/>
+  <div class="row"> 
+                             
+      <div class="col col-3">
+                          
+      </div>
+      <div class="col col-4">
+        
+        
+    </div> 
+    <div class="col col-5">
+                          
+    </div>
+  </div> 
+
+</fieldset> 
+     
+    
+<footer>
+  <div class="row"> 
+                             
+      <div class="col col-3">
+                          
+      </div>
+      <div class="col col-4">
+          <button data-toggle="modal" data-target="#mdModal" type="submit" class="btn btn-success" >
+              <i class="fa fa-check-circle-o"></i>
+              Efetuar             
+            </button>
+
+            
+      </div>
+    <div class="col col-5">
+                          
+    </div>
+  </div> 
+
+</footer>
+
+</form>
+</div>        
+
+
+</div>
+
+
+      
+     
+  

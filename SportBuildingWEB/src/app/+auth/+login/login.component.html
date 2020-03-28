@@ -1,0 +1,68 @@
+<header id="header" class="">
+
+  <div id="logo-group">
+    <span id="logo"> <img src="assets/img/sports/logo2.png" alt="SPORT BUILDING" style="width:350px;height: 45px;"> </span>
+  </div>
+
+  <!-- <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">{{'Need an account' | i18n}}?</span> <a routerLink="/auth/register" class="btn btn-danger">{{'CREATE ACCOUNT' | i18n}}</a> </span> -->
+
+</header>
+<div id="main" role="main" class="animated fadeInDown">
+
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+        <h1 class="txt-color-red login-header-big">Login</h1>
+
+        <div class="hero">
+          <img src="assets/img/sports/capa.PNG" alt="" class="pull-right display-image" style="width:650px;height: 320px;">
+                  
+        </div>        
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+        <div class="well no-padding">
+          <form class="smart-form client-form" [formGroup]="form" >
+            <header>
+              Entrando
+            </header>
+            <fieldset>
+              <section>
+                <label class="label">Login</label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <input type="text" name="userLogin" formControlName="userLogin" [(ngModel)]="userLogin" data-smart-validate-input="" data-required="" data-email="" data-minlength="5" data-maxnlength="30" data-message-required="Preencha seu login de acesso" >
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                    Por favor entre com seu login de acesso! Seu login é o seu E-mail (sem o @email.com.br)</b></label>
+              </section>
+              <section>
+                <label class="label">Senha</label>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input type="password" name="userPassword" formControlName="userPassword" [(ngModel)]="userPassword" data-smart-validate-input="" data-required="" data-minlength="6" data-maxnlength="20" data-message="Preencha sua senha">
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Entre com sua Senha! (No primeiro acesso, sua senha é a padrão do escritório)</b> </label>
+                <div class="note">
+                  <a routerLink="/auth/forgot-password">Esqueceu sua Senha?</a>                  
+                </div>
+                <div class="note">
+                  <a routerLink="/auth/register">Novo Profissional ?</a>                  
+                </div>
+                <div class="note">
+                  <a routerLink="/auth/registerCondominio">Novo Condominio ?</a>                  
+                </div>
+              </section>              
+              <section>
+                <label class="checkbox">
+                  <input type="checkbox" name="remember" checked>
+                  <i></i>Permanecer logado</label>
+              </section>
+            </fieldset>
+            <footer>
+              <button (click)="login($event)" class="btn btn-primary" [disabled]="!form.valid">
+                  Entrar
+              </button>              
+            </footer>
+          </form>
+        </div>        
+      </div>
+    </div>
+  </div>  
+</div>
+

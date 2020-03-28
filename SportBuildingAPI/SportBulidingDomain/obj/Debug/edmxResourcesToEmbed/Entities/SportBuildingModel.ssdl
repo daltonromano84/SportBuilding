@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportBuildingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bairro">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Condominios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NomeCondominio" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IDPais" Type="int" />
+    <Property Name="IDCidade" Type="int" />
+    <Property Name="IDUF" Type="int" />
+    <Property Name="IDBairro" Type="nchar" MaxLength="10" />
+    <Property Name="Endereco" Type="varchar" MaxLength="255" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="NomeResponsavel" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Especialidades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotasProfissionais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDProfissional" Type="int" />
+    <Property Name="IDCondominio" Type="int" />
+    <Property Name="Nota" Type="int" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PedidoAula">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDProfissional" Type="int" />
+    <Property Name="IDCondominio" Type="int" />
+    <Property Name="Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Profissionais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumeroRegistro" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IDPais" Type="int" Nullable="false" />
+    <Property Name="IDCidade" Type="int" Nullable="false" />
+    <Property Name="IDBairro" Type="int" Nullable="false" />
+    <Property Name="IDUF" Type="int" Nullable="false" />
+    <Property Name="Comentario" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ProfissionalEspecialidades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDProfissional" Type="int" Nullable="false" />
+    <Property Name="IDEspecialidade" Type="int" Nullable="false" />
+    <Property Name="ProfissionalID" Type="int" />
+    <Property Name="EspecialidadeID" Type="int" />
+  </EntityType>
+  <EntityType Name="UF">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SportBuilding.dbo.VW_ListaProfissionais' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_ListaProfissionais">
+    <Key>
+      <PropertyRef Name="IDProfissional" />
+      <PropertyRef Name="NomeProfissional" />
+      <PropertyRef Name="Idade" />
+      <PropertyRef Name="Sexo" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IDBairro" />
+      <PropertyRef Name="IDEspecialidade" />
+      <PropertyRef Name="Especialidades" />
+    </Key>
+    <Property Name="IDProfissional" Type="int" Nullable="false" />
+    <Property Name="NomeProfissional" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Sexo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IDBairro" Type="int" Nullable="false" />
+    <Property Name="Bairro" Type="varchar" MaxLength="100" />
+    <Property Name="IDEspecialidade" Type="int" Nullable="false" />
+    <Property Name="Especialidades" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="MediaNotas" Type="numeric" Precision="38" Scale="2" />
+    <Property Name="QtdAulas" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SportBuilding.dbo.VW_NotasProfissionais' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_NotasProfissionais">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MediaNota" Type="numeric" Precision="38" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SportBuilding.dbo.VW_ProfissionaisDadosCruzados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_ProfissionaisDadosCruzados">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Nome" />
+      <PropertyRef Name="Idade" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Sexo" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="IDCondominio" />
+      <PropertyRef Name="NomeCondominio" />
+      <PropertyRef Name="CNPJ" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Bairro" Type="varchar" MaxLength="100" />
+    <Property Name="Endereco" Type="nvarchar(max)" />
+    <Property Name="NumeroRegistro" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sexo" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Comentario" Type="varchar(max)" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Especialidades" Type="varchar" MaxLength="255" />
+    <Property Name="Roles" Type="varchar" MaxLength="255" />
+    <Property Name="IDCondominio" Type="int" Nullable="false" />
+    <Property Name="NomeCondominio" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="NomeResponsavel" Type="varchar" MaxLength="150" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID">
+    <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="0..1" />
+    <End Role="ProfissionalEspecialidades" Type="Self.ProfissionalEspecialidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidades">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfissionalEspecialidades">
+        <PropertyRef Name="EspecialidadeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfissionalEspecialidades_Profissionais_ProfissionalID">
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="0..1" />
+    <End Role="ProfissionalEspecialidades" Type="Self.ProfissionalEspecialidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profissionais">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfissionalEspecialidades">
+        <PropertyRef Name="ProfissionalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SportBuildingModelStoreContainer">
+    <EntitySet Name="Bairro" EntityType="Self.Bairro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Condominios" EntityType="Self.Condominios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotasProfissionais" EntityType="Self.NotasProfissionais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidoAula" EntityType="Self.PedidoAula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profissionais" EntityType="Self.Profissionais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfissionalEspecialidades" EntityType="Self.ProfissionalEspecialidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UF" EntityType="Self.UF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VW_ListaProfissionais" EntityType="Self.VW_ListaProfissionais" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_ListaProfissionais].[IDProfissional] AS [IDProfissional], 
+    [VW_ListaProfissionais].[NomeProfissional] AS [NomeProfissional], 
+    [VW_ListaProfissionais].[Idade] AS [Idade], 
+    [VW_ListaProfissionais].[Sexo] AS [Sexo], 
+    [VW_ListaProfissionais].[UserName] AS [UserName], 
+    [VW_ListaProfissionais].[IDBairro] AS [IDBairro], 
+    [VW_ListaProfissionais].[Bairro] AS [Bairro], 
+    [VW_ListaProfissionais].[IDEspecialidade] AS [IDEspecialidade], 
+    [VW_ListaProfissionais].[Especialidades] AS [Especialidades], 
+    [VW_ListaProfissionais].[MediaNotas] AS [MediaNotas], 
+    [VW_ListaProfissionais].[QtdAulas] AS [QtdAulas]
+    FROM [dbo].[VW_ListaProfissionais] AS [VW_ListaProfissionais]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_NotasProfissionais" EntityType="Self.VW_NotasProfissionais" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_NotasProfissionais].[ID] AS [ID], 
+    [VW_NotasProfissionais].[MediaNota] AS [MediaNota]
+    FROM [dbo].[VW_NotasProfissionais] AS [VW_NotasProfissionais]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_ProfissionaisDadosCruzados" EntityType="Self.VW_ProfissionaisDadosCruzados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_ProfissionaisDadosCruzados].[ID] AS [ID], 
+    [VW_ProfissionaisDadosCruzados].[Nome] AS [Nome], 
+    [VW_ProfissionaisDadosCruzados].[Idade] AS [Idade], 
+    [VW_ProfissionaisDadosCruzados].[Bairro] AS [Bairro], 
+    [VW_ProfissionaisDadosCruzados].[Endereco] AS [Endereco], 
+    [VW_ProfissionaisDadosCruzados].[NumeroRegistro] AS [NumeroRegistro], 
+    [VW_ProfissionaisDadosCruzados].[Email] AS [Email], 
+    [VW_ProfissionaisDadosCruzados].[UserName] AS [UserName], 
+    [VW_ProfissionaisDadosCruzados].[Sexo] AS [Sexo], 
+    [VW_ProfissionaisDadosCruzados].[Comentario] AS [Comentario], 
+    [VW_ProfissionaisDadosCruzados].[Status] AS [Status], 
+    [VW_ProfissionaisDadosCruzados].[Especialidades] AS [Especialidades], 
+    [VW_ProfissionaisDadosCruzados].[Roles] AS [Roles], 
+    [VW_ProfissionaisDadosCruzados].[IDCondominio] AS [IDCondominio], 
+    [VW_ProfissionaisDadosCruzados].[NomeCondominio] AS [NomeCondominio], 
+    [VW_ProfissionaisDadosCruzados].[Celular] AS [Celular], 
+    [VW_ProfissionaisDadosCruzados].[NomeResponsavel] AS [NomeResponsavel], 
+    [VW_ProfissionaisDadosCruzados].[CNPJ] AS [CNPJ]
+    FROM [dbo].[VW_ProfissionaisDadosCruzados] AS [VW_ProfissionaisDadosCruzados]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID" Association="Self.FK_ProfissionalEspecialidades_Especialidades_EspecialidadeID">
+      <End Role="Especialidades" EntitySet="Especialidades" />
+      <End Role="ProfissionalEspecialidades" EntitySet="ProfissionalEspecialidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfissionalEspecialidades_Profissionais_ProfissionalID" Association="Self.FK_ProfissionalEspecialidades_Profissionais_ProfissionalID">
+      <End Role="Profissionais" EntitySet="Profissionais" />
+      <End Role="ProfissionalEspecialidades" EntitySet="ProfissionalEspecialidades" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
