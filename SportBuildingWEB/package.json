@@ -94,7 +94,7 @@
     "ngx-datatable": "^1.0.3",
     "ngx-popover": "0.0.16",
     "ngx-print": "^1.1.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nouislider": "10.1.0",
     "raphael": "2.2.7",
     "redux": "3.7.2",
